@@ -13,7 +13,7 @@ Inspired by [snowplow.js](http://github.com/snowplow/snowplow)
 
 The general idea is that the sites the user is interacting with are making a bunch of get requests to simple_analytics, using javascript, image pixels, and a redirector as a click tracker.  All the data we need is stored in the query string parameters of the request.   We can either log this directly to a database async using something like Sideqik/Resque, or go through the logs later and put them into whatever database for ease of reporting.
 
-** page views ** 
+**page views** 
 
 In public/page_view_test  you can see an an example of how to log a page view.  It consists of merely initializing the simple_analytics tracking snippet and logging a page view.   For simplicity sake, this is currently doing using jquery async, but it could be changed to push and pull off a stack of events to log, much like mixpanel or GA.
 
@@ -29,20 +29,20 @@ In public/page_view_test  you can see an an example of how to log a page view.  
       });
     </script>
 
-** Conversions **  
+**Conversions**  
 in public/conversion_test you can an example of a conversion pixel in action, look like this:  
 
     <img src="http://your_simple_analytics_url.com/conversions/create?app_id=test" />
 
 
-** Arbritary Event Logging *** 
+**Arbritary Event Logging *** 
 
 If you want to log arbitrary events via javascript, like a user bookmarking a product, social sharing, you can track entirely arbitrary events using the javascript API
 
     window.simple_analytics.trackEvent('event-name', item_id, item_description);
 
 
-** Redirector for referral tracking/paid traffic ** 
+**Redirector for referral tracking/paid traffic** 
 
 When you drive paid traffic at your app, you want to be able to tie user actions back to the keyword or display ad.  This can be as simple as tracking if someone bought a product on your site, or signed up on your site.  You might also want to track page views.   More importantly, if you have multiple sites, you might want to track as a user bounces back and forth between the sites.   And, lastly, you might want to track if a user converts on a parternes 3rd party site that you are linking to or advertising.   You might want to track all these events and tie them back to the original ad you placed on google. 
 
