@@ -85,10 +85,8 @@ We store the data in a flat, simple table.
 
 
 
-## API
-
 # Requirements
-Uses ruby 2.0 and Rails 4, runs on heroku.
+Uses ruby 2.0 and Rails 4.
 
 Requires redis and sidekiq for event logging.
 
