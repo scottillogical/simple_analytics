@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type='text/javascript' src='http://localhost:4017/assets/tracking.js' ></script>
+    <!-- Snowplow starts plowing -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var snowplow = new SnowPlow()
+        snowplow.url = "http://localhost:4017"
+        snowplow.app_id = "test"
+        snowplow.trackEvent('test-event', '2', 'course');
+      });
+    </script>
+  </head>
+
+  <body>
+    Testing
+  </body>
+</html>
