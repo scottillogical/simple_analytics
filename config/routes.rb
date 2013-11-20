@@ -1,6 +1,6 @@
 require 'sidekiq/web'
 
-Simpleanalytics::Application.routes.draw do
+SimpleAnalytics::Application.routes.draw do
   
   mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
   devise_for :admins, :controllers => { :omniauth_callbacks => "admin/omniauth_callbacks" }
