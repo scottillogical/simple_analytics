@@ -1,22 +1,9 @@
+h2 Create New Redirect URL
 
-css: 
-  p {
-    margin:4px 0;
-  }
-  .hint, .weak {
-    font-size:12px;
-    color:gray;
-  }
-
-h2 Conversion Pixel
-| example:  
-br
-| &lt;img src=&quot;http://YOURSIMPLEANALYTICSURL.com/conversions/create?app_id=conversion-funnel&amp;event_desc=lead-submission&amp;user_id=USER_ID&quot; /&gt;
-
-h2 Redirect
 = simple_form_for :redirect_url_options, :url => '/tracking_urls' do |f| 
+  p 
+    | * Denotes required fields.
   = f.hidden_field :type, value: :redirect
-  //= f.input :dest, hint: 'destination url', type: 'url'
   .input.string.required
     label.string.required for="redirect_url_options_dest"
       abbr title="required"
@@ -30,4 +17,4 @@ h2 Redirect
   = f.input :utm_term, hint: '(identify the paid keywords)', required: false
   = f.input :utm_content, hint: '(use to differentiate ads)', required: false
   = f.input :utm_campaign, hint: '(product, promo code, or slogan'
-  = f.submit("Create redirect url")
+  = f.submit("Create redirect url", :class => "btn btn-primary")

@@ -10,6 +10,7 @@ SimpleAnalytics::Application.routes.draw do
   match 'conversions/create', to: 'conversions#create', via: [:get]
   match 'events/create', to: 'events#create', via: [:get]
   resources :tracking_urls
+  resources :conversion_pixels
 
   mount Sidekiq::Web, at: "/sidekiq"
   get '/admins/auth/google_apps/callback', :to => 'sessions#authenticate_admin'

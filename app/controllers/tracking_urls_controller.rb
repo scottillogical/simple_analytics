@@ -1,6 +1,6 @@
 class TrackingUrlsController < ApplicationController
 
-  before_filter :authenticate_admin!
+  before_filter :authenticate_admin! unless Rails.env.development?
   def new 
     @tracking_url = OpenStruct.new
   end
